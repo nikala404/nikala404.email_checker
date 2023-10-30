@@ -15,17 +15,6 @@
     <title>
       Frontend Mentor | Newsletter sign-up form with success message
     </title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <!-- <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style> -->
   </head>
   <body>
     <div class="starter">
@@ -53,15 +42,15 @@
           </p></span
         >
         <form action="#" method="get">
-          <label for="email">Email addres:</label>
+          <label for="email1">Email addres:</label>
           <br />
           <input
             type="email"
-            id="email"
-            name="email"
-            required
+            id="email1"
+            name=""
             placeholder="youremail@example.com"
           />
+          <h3 id="nika"></h3>
           <button class="button1" type="submit">
             Subscribe to monthly newsletter
           </button>
@@ -69,5 +58,39 @@
       </span>
       <img src="/assets/images/illustration-sign-up-desktop.svg" alt="" />
     </div>
+    <script>
+      "use strict";
+      const button = document.querySelector(".button1");
+      const input1 = document.getElementById("email1");
+      const span1 = document.getElementById("nika");
+      input1.addEventListener("input", () => {
+        if (
+          !input1.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)
+        ) {
+          span1.innerHTML = "The email address is not formatted correctly";
+          input1.style.marginBottom = "0px";
+          span1.style.color = "red";
+        } else {
+          span1.innerHTML = "Email structure is correct";
+          input1.style.marginBottom = "0px";
+          span1.style.color = "green";
+        }
+      });
+
+      button.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (
+          input1.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)
+        ) {
+          window.location.reload();
+
+          alert("Thank You For Subscribing");
+        } else if (input1.value === "") {
+          alert("The field is left empty");
+        } else {
+          alert("The Email Address Is Not Formatted Correctly");
+        }
+      });
+    </script>
   </body>
 </html>
