@@ -48,25 +48,27 @@ html body {
   height: 50px;
   border-radius: 7px;
   border: 1px solid rgb(0, 0, 0);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding-left: 10px;
   display: block;
   box-sizing: border-box;
+}
+#nika {
+  margin-bottom: 10px;
+  margin-top: 0px;
+  text-align: left;
+  text-align: center;
+  font-size: 15px;
+  display: flex;
+  color: red;
+  font-weight: 200;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 .form_div button,
 input:hover {
   cursor: pointer;
 }
-@keyframes example {
-  from {
-    background-color: linear
-      gradient(90deg, rgb(109, 38, 38), rgb(240, 121, 117));
-  }
-  to {
-    background-color: linear
-      gradient(90deg, rgb(255, 255, 255), rgb(199, 80, 11));
-  }
-}
+
 .form_div button:hover {
   animation-name: example;
   animation-duration: 4s;
@@ -121,7 +123,6 @@ input:hover {
   }
 }
 
-/* Additional Media Queries for smaller screens if needed */
 @media (max-width: 480px) {
   .form_div h1 {
     font-size: 40px;
